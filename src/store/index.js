@@ -5,13 +5,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    alert:{}
   },
   getters: {
+    getAlert(state){
+      return state.alert;
+    }
   },
   mutations: {
+    setAlert(state,item){
+      state.alert = {...item};
+    }
   },
-  actions: {
-  },
-  modules: {
-  }
 })

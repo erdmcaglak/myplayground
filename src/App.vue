@@ -1,32 +1,50 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div class="app-main">
+    <Alert :err="getAlert"/>
+    <Menu />
+    <router-view style="width:100%"></router-view>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import Menu from "@/components/Menu.vue"
+import Alert from "@/generic-components/alert/Alert.vue"
+import {mapGetters} from "vuex"
+export default {
+  components:{
+    Menu,
+    Alert
+  },
+  computed:{
+    ...mapGetters([
+      "getAlert"
+    ])
   }
+}
+</script>
+
+<style lang="scss">
+@import "@/scss/mixins.scss";
+@import "@/scss/colors.scss";
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+html,body{
+  background-color: $black;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.app-main{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  @include d-flex(row,flex-start,stretch);
 }
 </style>
