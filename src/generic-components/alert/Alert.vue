@@ -109,6 +109,7 @@ export default {
     position: fixed;
     top: 0;
     right: 0;
+    z-index: 99;
     @include d-flex(column,flex-start,stretch);
     @media (max-width: 480px) {
         padding: 1px;
@@ -139,6 +140,7 @@ export default {
             padding: 9px 5px;
             gap: 5px;
             margin-bottom: 6px;
+            font-size: 2.8rem;
         }
         @media (min-width: 481px) and (max-width: 768px) {
             width: 350px;

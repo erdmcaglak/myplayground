@@ -172,6 +172,7 @@ export default {
 <style lang="scss">
 @import "@/scss/mixins.scss";
 @import "@/scss/colors.scss";
+@import "@/scss/transition.scss";
 .snake-main{
   color: $white;
   @include d-flex-center;
@@ -183,6 +184,28 @@ export default {
     @include d-flex(column,flex-start,stretch);
     padding: 30px;
     gap: 50px;
+    @media (min-width: 1025px) and (max-width: 1440px){
+      width: 50%;
+      height: 75%;
+      padding: 25px;
+      gap: 40px;
+    }
+    @media (min-width: 769px) and (max-width: 1024px){
+      width: 70%;
+      height: 85%;
+      padding: 25px;
+      gap: 35px;
+    }
+    @media (min-width: 481px) and (max-width: 768px) {
+      width: 80%;
+      height: 80%;
+    }
+    @media (max-width: 480px) {
+      width: 95%;
+      height: 80%;
+      padding: 25px;
+      gap: 35px;
+    }
     .calculator-result-area{
       @include d-flex(row,flex-end,center);
       font-size: 4rem;
@@ -191,12 +214,37 @@ export default {
       min-height: 100px;
       position: relative;
       user-select: none;
+      border-radius: 8px;
+      @media (min-width: 1025px) and (max-width: 1440px){
+        padding: 15px;
+        min-height: 90px;
+      }
+      @media (min-width: 769px) and (max-width: 1024px){
+        padding: 10px;
+        min-height: 80px;
+      }
+      @media (min-width: 481px) and (max-width: 768px) {
+        padding: 20px;
+        min-height: 90px;
+        font-size: 5rem;
+      }
+      @media (max-width: 480px) {
+        padding: 15px;
+        min-height: 80px;
+        font-size: 5rem;
+      }
       .input-second-holder{
         position: absolute;
         left: 5px;
         top: 5px;
         color: $black1;
         font-size: 2rem;
+        @media (min-width: 481px) and (max-width: 768px) {
+          font-size: 3.5rem;
+        }
+        @media (max-width: 480px) {
+          font-size: 3.5rem;
+        }
       }
     }
     .calculator-key-area{
@@ -218,15 +266,29 @@ export default {
           cursor: pointer;
           transition: all .1s linear;
           user-select: none;
+          @media(hover: hover) and (pointer: fine){
+            &:hover{
+              background-color: $black;
+            }
+          }
+          @media(hover: none) {
+            &:active{
+              background-color: $black;
+            }
+          }
+          @media (min-width: 481px) and (max-width: 768px) {
+            font-size: 5rem;
+          }
+          @media (max-width: 480px) {
+            font-size: 5rem;
+          }
           &:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4){
             border-top: none;
           }
           &:nth-child(4n){
             border-right: none;
           }
-          &:hover{
-            background-color: $black;
-          }
+          
         }
       }
     }

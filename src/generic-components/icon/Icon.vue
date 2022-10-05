@@ -5,6 +5,8 @@
         :icon="temp.svg"
         :width="20"
         :iconColor="#fff"
+        :clickEvent="temp"
+        pointerNone
     />
 
     //! Responsive Icon 
@@ -18,6 +20,8 @@
             xs:'12',
         }"
         iconColor="#fff"
+        :clickEvent="temp"
+        pointer
     />
  -->
     <div @click="clickIcon" :style="styleObject" :class="widthTypeControl ? 'repsonsive-generic-icon' :'generic-icon'"></div>

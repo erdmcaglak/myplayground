@@ -135,3 +135,38 @@
         transform: translateX(0);
     }
 }
+
+//? Menu slide 
+
+.menu-slide-enter{
+
+}
+.menu-slide-enter-active{
+    animation: menu-slide-enter-animate .3s ease-out forwards;
+}
+.menu-slide-leave{
+    
+}
+.menu-slide-leave-active{
+    animation: menu-slide-leave-animate .3s ease-out forwards;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes menu-slide-enter-animate {
+  from{
+      transform: translateX(-100%);
+  }
+  to{
+      transform: translateX(0);
+  }
+}
+@keyframes menu-slide-leave-animate {
+  from{
+      transform: translateX(0);
+  }
+  to{
+      transform: translateX(-100%);
+  }
+}

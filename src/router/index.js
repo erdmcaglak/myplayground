@@ -5,6 +5,7 @@ Vue.use(VueRouter)
 
 import Welcome from "@/views/Welcome.vue"
 import Calculator from "@/views/Calculator.vue"
+import PasswordCreator from "@/views/PasswordCreator.vue"
 
 const routes = [
   {
@@ -16,6 +17,11 @@ const routes = [
     path:'/calculator',
     name:"Welcome",
     component:Calculator
+  },
+  {
+    path:'/password-creator',
+    name:"PasswordCreator",
+    component:PasswordCreator
   }
 ]
 

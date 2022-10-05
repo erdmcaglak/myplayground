@@ -35,11 +35,24 @@ export default {
   text-decoration: none;
 }
 html,body{
+  -webkit-tap-highlight-color: transparent;
   background-color: $black;
   width: 100%;
   height: 100%;
   font-size: 10px;
   font-family: 'Source Sans Pro', sans-serif;
+  @media (min-width: 1025px) and (max-width: 1440px){
+    font-size: 9px;
+  }
+  @media (min-width: 769px) and (max-width: 1024px){
+    font-size: 8px;
+  }
+  @media (min-width: 481px) and (max-width: 768px) {
+    font-size: 7px;
+  }
+  @media (max-width: 480px) {
+    font-size: 6px;
+  }
 }
 .app-main{
   position: relative;
